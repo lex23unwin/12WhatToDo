@@ -1,1 +1,3 @@
-alert("get some bitches")
+const content = document.querySelector("#content")
+content.textContent = "asdasasdfasdfasdfasdfasdffjl;"
+

@@ -1,1 +1,1 @@
-alert("get some bitches");
+document.querySelector("#content").textContent="asdasasdfasdfasdfasdfasdffjl;";
