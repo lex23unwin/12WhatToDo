@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List App</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer type="module"></script>
+    <script src="main.js" defer></script>
     <script src="https://kit.fontawesome.com/27e8e3aead.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -20,26 +20,26 @@
             <div id="nav-home">
                 <div id="nav-home-title">Home</div>
                 <div id="nav-home-task-container">
-                    <div id="nav-home-tasks-choice">
+                    <div class="nav-home-tasks-choice" id="general">
                         <i class="fa-solid fa-inbox"></i>
                         General Tasks
                     </div>
-                    <div id="nav-home-tasks-choice">
+                    <div class="nav-home-tasks-choice" id="important">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        Important Tasks
+                    </div>
+                    <div class="nav-home-tasks-choice" id="today">
                         <i class="fa-solid fa-calendar-day"></i>
                         Today's Tasks
                     </div>
-                    <div id="nav-home-tasks-choice">
+                    <div class="nav-home-tasks-choice" id="week">
                         <i class="fa-solid fa-calendar-week"></i>
                         This Week's Tasks
-                    </div>
-                    <div id="nav-home-tasks-choice">
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        Important Tasks
                     </div>
                 </div>
             </div>
             <div id="nav-projects">
-                <div id="nav-projects-title">Project</div>
+                <div id="nav-projects-title">Projects</div>
                 <div id="nav-projects-add-project">
                     <i id="new-project-button" class="fa-solid fa-circle-plus"></i>
                     Add Project
@@ -50,13 +50,20 @@
     <main>
         <div id="main-container">
             <div id="main-tasks-header">
-                All Tasks
+                General Tasks
+            </div>
+            <div id="main-tasks-content-none">
+                <i id="new-task-button" class="fa-solid fa-plus"></i>
+                No Tasks. Want to add some?
+            </div>
+            <div id="main-tasks-content-form">
+                <form action="#" method="get" id="form-id">
+                    <label for="title">Name of Task: </label>
+                    <input type="text" id="title" name="title">
+                </form>
             </div>
             <div id="main-tasks-content">
-                <div id="main-tasks-content-none">
-                    <i id="new-task-button" class="fa-solid fa-plus"></i>
-                    No Tasks. Want to add some?
-                </div>
+
             </div>
         </div>
     </main>
