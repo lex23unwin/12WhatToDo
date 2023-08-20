@@ -20,6 +20,7 @@ function maybeShowNoneContent() {
     if (mainTasksContent.hasChildNodes() === false)
     {
         mainTasksContentNone.style.display = "flex";
+        renderHeader();
     }
     else {
         clearMainTasksContainer();

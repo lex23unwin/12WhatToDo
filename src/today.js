@@ -1,6 +1,6 @@
 export default function onClickTodayTab() {
-    const importantTab = document.querySelector("#today")
-    importantTab.addEventListener("click", clearFormBox)
+    const todayTab = document.querySelector("#today")
+    todayTab.addEventListener("click", clearFormBox)
 }
 
 function clearFormBox() {
@@ -20,6 +20,7 @@ function maybeShowNoneContent() {
     if (mainTasksContent.hasChildNodes() === false)
     {
         mainTasksContentNone.style.display = "flex";
+        renderHeader();
     }
     else {
         clearMainTasksContainer();

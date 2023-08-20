@@ -1,6 +1,6 @@
 export default function onClickWeekTab() {
-    const importantTab = document.querySelector("#week")
-    importantTab.addEventListener("click", clearFormBox)
+    const weekTab = document.querySelector("#week")
+    weekTab.addEventListener("click", clearFormBox)
 }
 
 function clearFormBox() {
@@ -20,6 +20,7 @@ function maybeShowNoneContent() {
     if (mainTasksContent.hasChildNodes() === false)
     {
         mainTasksContentNone.style.display = "flex";
+        renderHeader();
     }
     else {
         clearMainTasksContainer();

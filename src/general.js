@@ -1,6 +1,6 @@
 export default function onClickGeneralTab() {
-    const importantTab = document.querySelector("#general")
-    importantTab.addEventListener("click", clearFormBox)
+    const generalTab = document.querySelector("#general")
+    generalTab.addEventListener("click", clearFormBox)
 }
 
 function clearFormBox() {
@@ -20,6 +20,7 @@ function maybeShowNoneContent() {
     if (mainTasksContent.hasChildNodes() === false)
     {
         mainTasksContentNone.style.display = "flex";
+        renderHeader();
     }
     else {
         clearMainTasksContainer();
