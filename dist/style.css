@@ -133,6 +133,7 @@ main {
 
 #main-tasks-content-none {
     background-color: var(--secondary-light);
+    font-size: 1.25rem;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -148,8 +149,48 @@ main {
 
 #main-tasks-content-form {
     display: none;
+    font-size: 1.25rem;
+    border: 2px dashed black;
+    padding: 1em;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+#form-id {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .75em;
+    flex-wrap: wrap;
+}
+
+#task-title {
+    font-size: 1.25rem;
+    border-radius: 15px;
+    width: 50%;
+}
+
+#submit-btn {
+    border-radius: 15px;
+    width: 10%;
+    min-width: 50px;
+    height: 30px;
+    background-color: white;
+}
+
+#datetime-btn {
+    width: 10%;
+    min-width: 50px;
+}
+
+#form-x {
+    border: none;
+    font-size: 1.25rem;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
 
 /**************** FOOTER ************************/
