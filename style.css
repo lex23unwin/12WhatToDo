@@ -64,7 +64,7 @@ nav {
     margin: 1em;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1em;
 }
 
 #nav-home {
@@ -111,6 +111,47 @@ nav {
     font-size: 1.5rem;
 }
 
+#pop-up-add-project {
+    margin: 0 auto;
+    border: 2px dashed black;
+    width: 100%;
+    flex-direction: row;
+    background-color: white;
+    display: none;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+#pop-up-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5em;
+}
+
+#submit-btn2 {
+    border-radius: 15px;
+    background-color: lime;
+    border-color: black;
+    font-weight: bolder;
+    font-size: .875rem;
+    padding: .35em;
+}
+
+#form-x2 {
+    border: 2px solid black;
+    font-size: 1.25rem;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 25px;
+    background-color: red;
+    cursor: pointer;
+}
+
 /**************** MAIN ************************/
 
 main {
@@ -155,6 +196,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    background-color: white;
 }
 
 #form-id {
@@ -169,27 +211,61 @@ main {
     font-size: 1.25rem;
     border-radius: 15px;
     width: 50%;
+    background-color: var(--secondary-light);
 }
 
-#submit-btn {
+.submit-btn {
     border-radius: 15px;
     width: 10%;
     min-width: 50px;
+    background-color: lime;
+    border-color: black;
+    font-weight: bolder;
+}
+
+#task-title {
+    padding-left: 10px;
+}
+
+#project-name {
+    width: 10%;
+    border-radius: 15px;
     height: 30px;
-    background-color: white;
+    min-width: 100px;
+    background-color: var(--secondary-light);
+    font-size: .75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
 }
 
 #datetime-btn {
     width: 10%;
-    min-width: 50px;
+    border-radius: 15px;
+    height: 30px;
+    min-width: 100px;
+    background-color: white;
+    font-size: .75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: .4em;
+    background-color: var(--secondary-light);
 }
 
 #form-x {
-    border: none;
+    border: 2px solid black;
     font-size: 1.25rem;
     color: black;
     font-weight: bolder;
     cursor: pointer;
+    border-radius: 15px;
+    width: 25px;
+    background-color: red;
 }
 
 
