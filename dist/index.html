@@ -44,24 +44,36 @@
                     <i id="new-project-button" class="fa-solid fa-circle-plus"></i>
                     Add Project
                 </div>
+                <div id="nav-projects-content">
+
+                </div>
+                <div id="pop-up-add-project">
+                    <form action="#" id="pop-up-form">
+                        <label for="project-title">Title:</label>
+                        <input type="text" id="project-title" name="project-title" placeholder="(ex. 'myProject')">
+                        <input type="submit" value="Submit" id="submit-btn2">
+                        <button id="form-x2">X</button>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
     <main>
         <div id="main-container">
             <div id="main-tasks-header">
-                General Tasks
+                Welcome to TooMuchToDo
             </div>
             <div id="main-tasks-content-none">
                 <i id="new-task-button" class="fa-solid fa-plus"></i>
-                No Tasks. Want to add some?
+                Click on a Task Tab or start a new Project!
             </div>
             <div id="main-tasks-content-form">
                 <form action="#" id="form-id">
                     <label for="task-title">Name of Task: </label>
-                    <input type="text" id="task-title" name="task-title" >
+                    <input type="text" id="task-title" name="task-title" placeholder="Task Title (eg. Do dishes)" >
                     <input type="datetime-local" id="datetime-btn" >
-                    <input type="submit" value="submit" id="submit-btn">
+                    <div id="project-name">No Project Name</div>
+                    <input type="submit" value="Submit" class="submit-btn">
                     <button id="form-x">X</button>
                 </form>
             </div>
