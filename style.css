@@ -21,6 +21,8 @@ body {
     background-color: #333;
 }
 
+/**************** HEADER ************************/
+
 header {
     grid-row: 1 / 2;
     grid-column: 1 / 3;
@@ -48,6 +50,8 @@ header {
     font-size: 2rem;
 }
 
+/**************** NAV ************************/
+
 nav {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
@@ -74,12 +78,12 @@ nav {
     border-bottom: 2px solid black;
 }
 
-#nav-home-tasks-choice {
+.nav-home-tasks-choice {
     font-size: 1.25rem;
     padding: .25em;
 }
 
-#nav-home-tasks-choice:hover {
+.nav-home-tasks-choice:hover {
     background-color: #bbb;
     cursor: pointer
 }
@@ -107,6 +111,8 @@ nav {
     font-size: 1.5rem;
 }
 
+/**************** MAIN ************************/
+
 main {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
@@ -125,17 +131,12 @@ main {
     font-size: 2rem;
 }
 
-#main-tasks-content div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 #main-tasks-content-none {
     background-color: var(--secondary-light);
     height: 50px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1em;
     padding-left: 1em;
 }
@@ -144,6 +145,14 @@ main {
     cursor: pointer;
     font-size: 1.2rem;
 }
+
+#main-tasks-content-form {
+    display: none;
+}
+
+
+
+/**************** FOOTER ************************/
 
 footer {
     grid-row: 3 / 4;
