@@ -38,7 +38,7 @@ const app = (() => {
     }
 
     const addProject = (project) => {
-        const projectNAmeExist = app.projects.some( (proj) => {proj.name.toLowerCase() === project.name.toLowerCase()});
+        const projectNameExist = app.projects.some( (proj) => {proj.name.toLowerCase() === project.name.toLowerCase()});
 
         if (projectNameExist)
         {
