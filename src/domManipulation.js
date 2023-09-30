@@ -11,6 +11,7 @@ const domManipulation = (() => {
   const popUpAddProject = document.getElementById('pop-up-add-project');
   const mainTasksHeader = document.getElementById('main-tasks-header');
   const mainTasksContentNone = document.getElementById("main-tasks-content-none");
+  const mainTasksContentForm = document.querySelector("#main-tasks-content-form")
   const newTaskButton = document.getElementById('new-task-button');
   const formID = document.getElementById('form-id');
   const taskTitle = document.getElementById('task-title');
@@ -49,9 +50,35 @@ const domManipulation = (() => {
   function clickSidebarProject(project, projectItem) {
     projectItem.addEventListener("click", () => {
       mainTasksHeader.textContent = project.name;
-      mainTasksContentNone.textContent = 'Click on the plus sign to add more tasks!';
+      mainTasksContentNone.textContent = ''; 
+      const plusSignText = document.createTextNode('Click on the plus sign to add more tasks!');
+      const plusSignIcon = document.createElement('i');
+      plusSignIcon.classList.add('fas', 'fa-plus'); 
+      plusSignIcon.style.cursor = 'pointer';
+      plusSignClick(plusSignIcon);
+      mainTasksContentNone.appendChild(plusSignIcon);
+      mainTasksContentNone.appendChild(plusSignText);
     })
   }
+
+  function plusSignClick(plusSignIcon)
+  {
+    plusSignIcon.addEventListener("click", () => {
+      mainTasksContentForm.style.display = "flex";
+    })
+  }
+
+  formX.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("we in here")
+    taskTitle.value = "";
+    dateTimeBtn.value = "";
+    console.log(" reseting")
+    mainTasksContentForm.style.display = "none";
+    console.log("switched display")
+  })
+
+
 
   return {};
 })();
