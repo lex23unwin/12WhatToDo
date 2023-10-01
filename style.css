@@ -183,6 +183,10 @@ main {
     padding-left: 1em;
 }
 
+.delete-task-button {
+    color: red;
+}
+
 #new-task-button:hover {
     cursor: pointer;
     font-size: 1.2rem;
