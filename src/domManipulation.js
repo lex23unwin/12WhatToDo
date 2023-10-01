@@ -1,6 +1,8 @@
 import app from './appdata';
 import storage from './localstorage';
-import { Project } from './project'; // Make sure the path is correct
+import { Project } from './project'; 
+import { Task } from './task';
+
 
 const domManipulation = (() => {
   // Selectors
@@ -21,6 +23,8 @@ const domManipulation = (() => {
   const formX = document.getElementById('form-x');
   const formX2 = document.getElementById('form-x2');
 
+  let activeProject = "";
+
   newProjectButton.addEventListener("click", () => {
     popUpAddProject.style.display = "flex";
   })
@@ -39,17 +43,18 @@ const domManipulation = (() => {
     projectTitle.value = '';
   });
 
-  function addProjectToSidebar(project) {
+  function addProjectToSidebar(newProject) {
     const projectItem = document.createElement('div');
     projectItem.classList.add('project-item');
-    projectItem.textContent = project.name;
-    clickSidebarProject(project, projectItem);
+    projectItem.textContent = newProject.name;
+    clickSidebarProject(newProject, projectItem);
     navProjectsContent.appendChild(projectItem);
   }
   
-  function clickSidebarProject(project, projectItem) {
+  function clickSidebarProject(newProject, projectItem) {
+    activeProject = newProject;
     projectItem.addEventListener("click", () => {
-      mainTasksHeader.textContent = project.name;
+      mainTasksHeader.textContent = newProject.name;
       mainTasksContentNone.textContent = ''; 
       const plusSignText = document.createTextNode('Click on the plus sign to add more tasks!');
       const plusSignIcon = document.createElement('i');
@@ -70,17 +75,74 @@ const domManipulation = (() => {
 
   formX.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("we in here")
+    console.log("we in here");
     taskTitle.value = "";
     dateTimeBtn.value = "";
-    console.log(" reseting")
+    console.log(" reseting");
     mainTasksContentForm.style.display = "none";
-    console.log("switched display")
+    console.log("switched display");
   })
 
+  formID.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const taskTitleValue = taskTitle.value;
+    const taskDueDateValue = dateTimeBtn.value;
+    const newTask = createTask(taskTitleValue, taskDueDateValue);
+    activeProject.addTask(newTask); 
+    taskTitle.value = '';
+    dateTimeBtn.value = '';
+    mainTasksContentForm.style.display = 'none';
+    displayTasks(activeProject);
+  })
 
+  function createTask(title, dueDate)
+  {
+    const newTask = new Task(title);
+    newTask.addDueDate(dueDate);
+    return newTask;
+  }
+
+  function displayTasks(activeProject_) 
+  {
+    mainTasksContent.innerHTML = '';
+    activeProject_.tasks.forEach( (task) => {
+      const taskItem = document.createElement("div");
+
+      const task_title = document.createElement("div");
+      task_title.textContent = task.title;
+      const task_date = document.createElement("div");
+      task_date.textContent = formatDueDate(task.dueDate);
+      const delete_button = document.createElement("button");
+      delete_button.classList.add("delete-task-button");
+      delete_button.textContent = "X";
+      delete_button.addEventListener("click", () => {
+        activeProject_.deleteTask(task)
+        displayTasks(activeProject_);
+      })
+
+      taskItem.appendChild(task_title);
+      taskItem.appendChild(task_date);
+      taskItem.appendChild(delete_button);
+
+      mainTasksContent.appendChild(taskItem);
+    })
+  }
+
+  function formatDueDate(due_date)
+  {
+    if (due_date == "")
+    {
+      return "No Due Date";
+    }
+    else 
+    {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return due_date.toLocaleDateString(undefined, options);
+    }
+  }
 
   return {};
+
 })();
 
 export default domManipulation;

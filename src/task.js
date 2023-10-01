@@ -6,9 +6,7 @@ class Task {
   constructor(title, description, priority) 
   {
     this.title = title;
-    this.description = description;
     this.dueDate = undefined;
-    this.priority = priority;
     this.completed = false;
     this.id = uuidv4();
   }
