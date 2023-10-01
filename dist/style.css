@@ -183,8 +183,22 @@ main {
     padding-left: 1em;
 }
 
+.task-item-display {
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+.task-item-display div {
+    border-right: black;
+}
+
 .delete-task-button {
-    color: red;
+    color: white;
+    border-radius: 50px;
+    background-color: red;
+    border-color: red;
+    width: 25px;
 }
 
 #new-task-button:hover {

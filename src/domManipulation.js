@@ -52,8 +52,8 @@ const domManipulation = (() => {
   }
   
   function clickSidebarProject(newProject, projectItem) {
-    activeProject = newProject;
     projectItem.addEventListener("click", () => {
+      activeProject = newProject;
       mainTasksHeader.textContent = newProject.name;
       mainTasksContentNone.textContent = ''; 
       const plusSignText = document.createTextNode('Click on the plus sign to add more tasks!');
@@ -107,7 +107,7 @@ const domManipulation = (() => {
     mainTasksContent.innerHTML = '';
     activeProject_.tasks.forEach( (task) => {
       const taskItem = document.createElement("div");
-
+      taskItem.classList.add("task-item-display");
       const task_title = document.createElement("div");
       task_title.textContent = task.title;
       const task_date = document.createElement("div");
@@ -117,7 +117,7 @@ const domManipulation = (() => {
       delete_button.textContent = "X";
       delete_button.addEventListener("click", () => {
         activeProject_.deleteTask(task)
-        displayTasks(activeProject_);
+        displayTasks(activeProject);
       })
 
       taskItem.appendChild(task_title);
