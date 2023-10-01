@@ -53,6 +53,7 @@ const domManipulation = (() => {
   
   function clickSidebarProject(newProject, projectItem) {
     projectItem.addEventListener("click", () => {
+      displayTasks(newProject);
       activeProject = newProject;
       mainTasksHeader.textContent = newProject.name;
       mainTasksContentNone.textContent = ''; 
