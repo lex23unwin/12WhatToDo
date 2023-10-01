@@ -117,8 +117,9 @@ const domManipulation = (() => {
       delete_button.classList.add("delete-task-button");
       delete_button.textContent = "X";
       delete_button.addEventListener("click", () => {
-        activeProject_.deleteTask(task)
-        displayTasks(activeProject);
+        const taskId = task.id
+        activeProject_.deleteTask(taskId)
+        displayTasks(activeProject_);
       })
 
       taskItem.appendChild(task_title);

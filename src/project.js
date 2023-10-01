@@ -15,8 +15,8 @@ class Project {
         this.tasks.push(task)
     }
 
-    deleteTask = (task) => {
-        this.tasks = this.tasks.filter((item) => {item !== task});
+    deleteTask = (taskID) => {
+        this.tasks = this.tasks.filter((task) => task.id !== taskID);
     }
 }
 
