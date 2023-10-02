@@ -3,6 +3,7 @@ import storage from './localstorage';
 import { Project } from './project'; 
 import { Task } from './task';
 
+storage.read();
 
 const domManipulation = (() => {
   // Selectors
@@ -41,6 +42,8 @@ const domManipulation = (() => {
     addProjectToSidebar(newProject);
     popUpAddProject.style.display = 'none';
     projectTitle.value = '';
+    storage.save();
+    console.log("did a save");
   });
 
   function addProjectToSidebar(newProject) {
@@ -49,6 +52,8 @@ const domManipulation = (() => {
     projectItem.textContent = newProject.name;
     clickSidebarProject(newProject, projectItem);
     navProjectsContent.appendChild(projectItem);
+    storage.save();
+    console.log("did a save");
   }
   
   function clickSidebarProject(newProject, projectItem) {
@@ -65,6 +70,8 @@ const domManipulation = (() => {
       mainTasksContentNone.appendChild(plusSignIcon);
       mainTasksContentNone.appendChild(plusSignText);
     })
+    storage.save();
+    console.log("did a save");
   }
 
   function plusSignClick(plusSignIcon)
@@ -72,6 +79,8 @@ const domManipulation = (() => {
     plusSignIcon.addEventListener("click", () => {
       mainTasksContentForm.style.display = "flex";
     })
+    storage.save();
+    console.log("did a save");
   }
 
   formX.addEventListener("click", (e) => {
@@ -82,6 +91,8 @@ const domManipulation = (() => {
     console.log(" reseting");
     mainTasksContentForm.style.display = "none";
     console.log("switched display");
+    storage.save();
+    console.log("did a save");
   })
 
   formID.addEventListener('submit', (e) => {
@@ -94,12 +105,16 @@ const domManipulation = (() => {
     dateTimeBtn.value = '';
     mainTasksContentForm.style.display = 'none';
     displayTasks(activeProject);
+    storage.save();
+    console.log("did a save");
   })
 
   function createTask(title, dueDate)
   {
     const newTask = new Task(title);
     newTask.addDueDate(dueDate);
+    storage.save();
+    console.log("did a save");
     return newTask;
   }
 
@@ -127,6 +142,8 @@ const domManipulation = (() => {
       taskItem.appendChild(delete_button);
 
       mainTasksContent.appendChild(taskItem);
+      storage.save();
+      console.log("did a save");
     })
   }
 
