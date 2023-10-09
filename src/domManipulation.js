@@ -1,5 +1,4 @@
 import app from './appdata';
-import storage from './localstorage';
 import { Project } from './project'; 
 import { Task } from './task';
 
